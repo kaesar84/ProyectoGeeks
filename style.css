@@ -1,0 +1,14 @@
+/* .col-8{
+    background-color: var(--bs-primary);
+} */
+
+
+#contenedorProductos{
+height: auto;
+
+}
+
+.card{
+    margin: 1em;
+
+}
