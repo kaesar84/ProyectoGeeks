@@ -56,9 +56,6 @@ printCatalogo = () => {
 
 printCatalogo();
 
-
-
-
 // CARRITO
 var precio;
 var totalPrecio = 0;
@@ -96,4 +93,4 @@ printCarrito = () => {
   totalCesta.insertAdjacentHTML("beforeend", precioTotalCesta);
 };
 
-printCarrito();
+// printCarrito();

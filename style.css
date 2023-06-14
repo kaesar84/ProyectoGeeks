@@ -135,19 +135,33 @@
   align-self: self-center;
 }
 
-#container-buy{
-    width: 100%;
-    padding: 2em;
+#container-buy {
+  width: 100%;
+  padding: 2em;
 }
 
-#buy{
+#buy {
+  width: 100%;
+  display: flex;
+  align-items: first baseline;
+  justify-content: center;
+  gap: 50%;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#titulo-buy{
     width: 100%;
     display: flex;
-    align-items: first baseline;
+    align-items: center;
     justify-content: center;
-    gap:50%;
-    font-weight: bold;
-    font-size: 1.5em;
-    
-   
+    flex-direction: column;
+    gap: 2em;
+}
+
+
+#carritoIcon{
+    width: 20%;
+    height: auto;
+    fill: #9CA778;
 }
