@@ -51,6 +51,14 @@ printCatalogo = () => {
 </div> `;
 
     catalogo.insertAdjacentHTML("beforeend", itemCatalogo);
+
+    var imgCat = document.getElementsByClassName("itemImg")[i];
+    imgCat.addEventListener("click", function () {
+      // identificamos el indice del elemento clickado y lo pasamos como parametro para pintarlo en el carrito
+      // console.log(i)
+
+      printCarrito(i);
+    });
   }
 };
 
@@ -63,34 +71,34 @@ var totalPrecio = 0;
 var carrito = document.getElementById("containerCarrito");
 var totalCesta = document.getElementById("buy");
 
-printCarrito = () => {
-  for (let i = 0; i < productos.length; i++) {
-    var carritoItem = ` 
-      <div class="carritoItem">
-          <div class="container-itemImg container-carritoItemImg">
-            <img class="itemImg" draggable="true" src=${productos[i].src} alt="">
-          </div>
-          <div class="container-itemDescrip container-carritoItemDescrip">
-            <p>${productos[i].nombre}</p>
-          </div>
-          <div class="container-itemPrecio container-carritoItemprecio">
-            <p>${productos[i].precio}<span class="material-symbols-outlined">euro_symbol</span></p>
-          </div>
-        </div>
-      `;
-    precio = productos[i].precio;
-    // console.log(precio)
-    totalPrecio += precio;
-    console.log(totalPrecio);
-    carrito.insertAdjacentHTML("afterbegin", carritoItem);
-  }
-
-  var precioTotalCesta = `
-  <p>TOTAL</p>
-            <p><span id="valorCompra">${totalPrecio}</span><span class="material-symbols-outlined">euro_symbol</span></p>
+printCarrito = (i) => {
+  document.getElementById("titulo-buy").style.display = "none";
+  document.getElementById("buy").style.display = "flex";
+  
+  var carritoItem = ` 
+  <div class="carritoItem">
+      <div class="container-itemImg container-carritoItemImg">
+        <img class="itemImg" draggable="true" src=${productos[i].src} alt="">
+      </div>
+      <div class="container-itemDescrip container-carritoItemDescrip">
+        <p>${productos[i].nombre}</p>
+      </div>
+      <div class="container-itemPrecio container-carritoItemprecio">
+        <p>${productos[i].precio}<span class="material-symbols-outlined">euro_symbol</span></p>
+      </div>
+    </div>
   `;
 
-  totalCesta.insertAdjacentHTML("beforeend", precioTotalCesta);
+  precio = productos[i].precio;
+  // console.log(precio)
+  totalPrecio += precio;
+  console.log(totalPrecio);
+  carrito.insertAdjacentHTML("afterbegin", carritoItem);
+
+  var spanTotalCompra = document.getElementById('valorCompra');
+  spanTotalCompra.textContent = totalPrecio;
+
+
 };
 
-// printCarrito();
+
