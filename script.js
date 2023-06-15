@@ -53,12 +53,40 @@ printCatalogo = () => {
     catalogo.insertAdjacentHTML("beforeend", itemCatalogo);
 
     var imgCat = document.getElementsByClassName("itemImg")[i];
-    imgCat.addEventListener("click", function () {
-      // identificamos el indice del elemento clickado y lo pasamos como parametro para pintarlo en el carrito
-      // console.log(i)
+    var finArrastre = document.getElementById('containerCarrito');
 
+    // imgCat.addEventListener('dragstart',e=>{
+    //   console.log('drag start')
+    // })
+
+    imgCat.addEventListener('dragend',e=>{
+      console.log('drag enter')
       printCarrito(i);
-    });
+    })
+
+    finArrastre.addEventListener('dragover',e=>{
+      e.preventDefault();
+      console.log('dragover')
+    
+    })
+
+    finArrastre.addEventListener('drop',e=>{
+      // e.preventDefault();
+      console.log('drop')
+      console.log(i)
+      
+    })
+
+
+
+
+
+    // imgCat.addEventListener("click", function () {
+    //   // identificamos el indice del elemento clickado y lo pasamos como parametro para pintarlo en el carrito
+    //   // console.log(i)
+
+    //   printCarrito(i);
+    // });
   }
 };
 
