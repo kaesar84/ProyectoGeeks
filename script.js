@@ -1,32 +1,32 @@
 //var
 var productos = [
   {
-    nombre: "Turbo Fit",
+    nombre: "Turbo",
     precio: 60,
     src: "img/i1r.png",
   },
   {
-    nombre: "Power Strike",
+    nombre: "Power",
     precio: 90,
     src: "img/i2r.png",
   },
   {
-    nombre: "Speed flex",
+    nombre: "Flex",
     precio: 100,
     src: "img/i3r.png",
   },
   {
-    nombre: "Strike Force",
+    nombre: "Force",
     precio: 85,
     src: "img/i4r.png",
   },
   {
-    nombre: "Dark Side",
+    nombre: "Dark",
     precio: 120,
     src: "img/i5r.png",
   },
   {
-    nombre: "Party Fest",
+    nombre: "Party",
     precio: 19,
     src: "img/i6r.png",
   },
