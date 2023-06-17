@@ -1,5 +1,5 @@
 //var
-var productos = [
+const productos = [
   {
     nombre: "Turbo",
     precio: 60,
@@ -33,12 +33,12 @@ var productos = [
 ];
 
 // Elemento contenedor del catálogo de productos
-var catalogo = document.getElementById("container-Catalogo");
+const catalogo = document.getElementById("container-Catalogo");
 
 // función que genera HTML de los productos que conforman el array de objetos productos
 printCatalogo = () => {
   for (let i = 0; i < productos.length; i++) {
-    var itemCatalogo = ` <div class="catItem">
+    let itemCatalogo = ` <div class="catItem">
     <div class="container-itemImg">
         <img class="itemImg" draggable="true" src=${productos[i].src} alt="">
     </div>
@@ -52,8 +52,8 @@ printCatalogo = () => {
 
     catalogo.insertAdjacentHTML("beforeend", itemCatalogo);
 
-    var imgCat = document.getElementsByClassName("itemImg")[i];
-    var finArrastre = document.getElementById('containerCarrito');
+    let imgCat = document.getElementsByClassName("itemImg")[i];
+    let finArrastre = document.getElementById('containerCarrito');
 
     // imgCat.addEventListener('dragstart',e=>{
     //   console.log('drag start')
@@ -93,17 +93,17 @@ printCatalogo = () => {
 printCatalogo();
 
 // CARRITO
-var precio;
-var totalPrecio = 0;
+let precio;
+let totalPrecio = 0;
 
-var carrito = document.getElementById("containerCarrito");
-var totalCesta = document.getElementById("buy");
+const carrito = document.getElementById("containerCarrito");
+const totalCesta = document.getElementById("buy");
 
 printCarrito = (i) => {
   document.getElementById("titulo-buy").style.display = "none";
   document.getElementById("buy").style.display = "flex";
   
-  var carritoItem = ` 
+  let carritoItem = ` 
   <div class="carritoItem">
       <div class="container-itemImg container-carritoItemImg">
         <img class="itemImg" draggable="true" src=${productos[i].src} alt="">
@@ -123,7 +123,7 @@ printCarrito = (i) => {
   console.log(totalPrecio);
   carrito.insertAdjacentHTML("afterbegin", carritoItem);
 
-  var spanTotalCompra = document.getElementById('valorCompra');
+  const spanTotalCompra = document.getElementById('valorCompra');
   spanTotalCompra.textContent = totalPrecio;
 
 
