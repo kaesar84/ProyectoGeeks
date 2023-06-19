@@ -23,4 +23,4 @@
 
 `Diseño responsive`
 
-![Responsive](https://raw.githubusercontent.com/kaesar84/ProyectoGeeks/main/img/responsive.png?token=GHSAT0AAAAAACBPLQNJDABVAHXILL46HEI6ZEQHPPA)
+![Responsive]([https://raw.githubusercontent.com/kaesar84/ProyectoGeeks/main/img/responsive.png?token=GHSAT0AAAAAACBPLQNJDABVAHXILL46HEI6ZEQHPPA](https://raw.githubusercontent.com/kaesar84/ProyectoGeeks/main/img/responsive.png?token=GHSAT0AAAAAACBPLQNJ2POMDQOM7WW75A7CZEQHU7A)https://raw.githubusercontent.com/kaesar84/ProyectoGeeks/main/img/responsive.png?token=GHSAT0AAAAAACBPLQNJ2POMDQOM7WW75A7CZEQHU7A)
