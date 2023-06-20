@@ -1,4 +1,4 @@
-//var
+// Catálogo de productos
 const productos = [
   {
     nombre: "Turbo",
@@ -35,7 +35,7 @@ const productos = [
 // Elemento contenedor del catálogo de productos
 const catalogo = document.getElementById("container-Catalogo");
 
-// función que genera HTML de los productos que conforman el array de objetos productos
+// función que genera HTML de los productos que conforman el catálogo de productos
 printCatalogo = () => {
   for (let i = 0; i < productos.length; i++) {
     let itemCatalogo = ` <div class="catItem">
@@ -50,59 +50,35 @@ printCatalogo = () => {
     </div>
 </div> `;
 
+    // inserción en HTML
     catalogo.insertAdjacentHTML("beforeend", itemCatalogo);
 
+    // imágenes de los productos insertados
     let imgCat = document.getElementsByClassName("itemImg")[i];
-    let finArrastre = document.getElementById('containerCarrito');
 
-    // imgCat.addEventListener('dragstart',e=>{
-    //   console.log('drag start')
-    // })
-
-    imgCat.addEventListener('dragend',e=>{
-      console.log('drag enter')
+    // Incorporamos eventListeners e imprime articulos en el carrito al soltar el elemento
+    imgCat.addEventListener("dragend", (e) => {
       printCarrito(i);
-    })
-
-    finArrastre.addEventListener('dragover',e=>{
-      e.preventDefault();
-      console.log('dragover')
-    
-    })
-
-    finArrastre.addEventListener('drop',e=>{
-      // e.preventDefault();
-      console.log('drop')
-      console.log(i)
-      
-    })
-
-
-
-
-
-    // imgCat.addEventListener("click", function () {
-    //   // identificamos el indice del elemento clickado y lo pasamos como parametro para pintarlo en el carrito
-    //   // console.log(i)
-
-    //   printCarrito(i);
-    // });
+    });
   }
 };
 
+// Renderiza el catálogo de productos
 printCatalogo();
 
-// CARRITO
+// Carrito
 let precio;
 let totalPrecio = 0;
 
 const carrito = document.getElementById("containerCarrito");
 const totalCesta = document.getElementById("buy");
 
+// función que renderiza los elementos en el carrito, una vez activado el evento(dragend)
 printCarrito = (i) => {
   document.getElementById("titulo-buy").style.display = "none";
   document.getElementById("buy").style.display = "flex";
-  
+
+  // Estructura del renderizado del carrito
   let carritoItem = ` 
   <div class="carritoItem">
       <div class="container-itemImg container-carritoItemImg">
@@ -117,16 +93,13 @@ printCarrito = (i) => {
     </div>
   `;
 
+  // precio de producto individual
   precio = productos[i].precio;
-  // console.log(precio)
+
+  // precio total de articulos del carrito
   totalPrecio += precio;
-  console.log(totalPrecio);
   carrito.insertAdjacentHTML("afterbegin", carritoItem);
 
-  const spanTotalCompra = document.getElementById('valorCompra');
+  const spanTotalCompra = document.getElementById("valorCompra");
   spanTotalCompra.textContent = totalPrecio;
-
-
 };
-
-
